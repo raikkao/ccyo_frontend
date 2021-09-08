@@ -33,10 +33,10 @@ const Header = ({ links, isNightMode, setNightMode }) => {
             <img
               alt="BIFI"
               src={require(`images/BIFI-logo.svg`)}
-              height={'40px'}
+              height={'80px'}
               className={classes.logo}
             />
-            beefy.finance
+            ccdao.fi
           </Hidden>
           <Hidden smUp>
             <img
@@ -48,7 +48,7 @@ const Header = ({ links, isNightMode, setNightMode }) => {
           </Hidden>
         </Button>
 
-        <div className={classes.middleNav}>
+        {/* <div className={classes.middleNav}>
           <Hidden smDown>
             {renderLink('vote', 'vote', 'vote-yea', classes)}
             {renderLink('dashboard', t('stats'), 'chart-bar', classes)}
@@ -56,7 +56,7 @@ const Header = ({ links, isNightMode, setNightMode }) => {
           </Hidden>
           {renderLink('buy', t('buy'), 'dollar-sign', classes)}
           {renderBoost(classes)}
-        </div>
+        </div> */}
 
         <Hidden smDown implementation="css">
           <div className={classes.collapse}>{links}</div>

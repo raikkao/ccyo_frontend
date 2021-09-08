@@ -45,8 +45,6 @@ import { useSelector } from 'react-redux';
 import { StakeCountdown } from './StakeCountdown';
 import ValueLoader from '../../common/components/ValueLoader/ValueLoader';
 import { NetworkRequired } from '../../../components/NetworkRequired/NetworkRequired';
-import AvatarGroup from '@material-ui/lab/AvatarGroup';
-import { getSingleAssetSrc } from '../../helpers/getSingleAssetSrc';
 
 const useStyles = makeStyles(styles);
 
@@ -209,35 +207,6 @@ export default function StakePool(props) {
       : {};
   };
 
-  let avatar;
-  if (launchpool.logo) {
-    avatar = (
-      <Avatar
-        src={require('images/' + launchpool.logo)}
-        alt={launchpool.token}
-        variant="square"
-        imgProps={{ style: { objectFit: 'contain' } }}
-      />
-    );
-  } else {
-    avatar = (
-      <AvatarGroup className={`${classes.icon} MuiAvatar-root MuiAvatar-square`} spacing="small">
-        <Avatar
-          alt={launchpool.assets[0]}
-          variant="square"
-          imgProps={{ style: { objectFit: 'contain' } }}
-          src={getSingleAssetSrc(launchpool.assets[0])}
-        />
-        <Avatar
-          alt={launchpool.assets[1]}
-          variant="square"
-          imgProps={{ style: { objectFit: 'contain' } }}
-          src={getSingleAssetSrc(launchpool.assets[1])}
-        />
-      </AvatarGroup>
-    );
-  }
-
   return (
     <Grid container>
       <Helmet>
@@ -273,7 +242,12 @@ export default function StakePool(props) {
         alignItems="center"
       >
         <Grid item xs={6} sm={6} md={3}>
-          {avatar}
+          <Avatar
+            src={require('images/' + launchpool.logo)}
+            alt={launchpool.earnedToken}
+            variant="square"
+            imgProps={{ style: { objectFit: 'contain' } }}
+          />
         </Grid>
         <Grid item xs={6} sm={6} md={3}>
           <Typography className={classes.title}>
@@ -367,7 +341,14 @@ export default function StakePool(props) {
               >
                 {launchpool.partnership ? (
                   <Box className={classes.boost}>
-                    <Box>{avatar}</Box>
+                    <Box>
+                      <Avatar
+                        src={require('images/' + launchpool.logo)}
+                        alt={launchpool.token}
+                        variant="square"
+                        imgProps={{ style: { objectFit: 'contain' } }}
+                      />
+                    </Box>
                     <Box>
                       <img
                         alt={t('Boost')}
@@ -523,7 +504,14 @@ export default function StakePool(props) {
                   t('Stake-Button-Approval')
                 ) : launchpool.partnership ? (
                   <Box className={classes.boost}>
-                    <Box>{avatar}</Box>
+                    <Box>
+                      <Avatar
+                        src={require('images/' + launchpool.logo)}
+                        alt={launchpool.earnedToken}
+                        variant="square"
+                        imgProps={{ style: { objectFit: 'contain' } }}
+                      />
+                    </Box>
                     <Box>
                       <img
                         alt={t('Boost')}

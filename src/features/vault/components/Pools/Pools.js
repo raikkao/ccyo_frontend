@@ -73,7 +73,7 @@ export default function Pools() {
     <Grid container className={classes.container}>
       <Grid item xs={6}>
         <h1 className={classes.title}>{t('Vault-Network')}</h1>
-        <NetworksToggle />
+        {/* <NetworksToggle /> */}
         {fetchVaultsDataDone && activePoolCount && (
           <>
             <span className={classes.text}>{`${activePoolCount} ${t('Vault-MainTitle')}`}</span>
