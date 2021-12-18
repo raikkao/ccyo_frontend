@@ -36,7 +36,7 @@ const Header = ({ links, isNightMode, setNightMode }) => {
               height={'80px'}
               className={classes.logo}
             />
-            ccdao.fi
+            CCDAO Finance
           </Hidden>
           <Hidden smUp>
             <img

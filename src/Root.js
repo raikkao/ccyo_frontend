@@ -56,13 +56,13 @@ function Root() {
 
   return (
     <Provider store={store}>
-      <Helmet>
+      {/* <Helmet>
         <title>{getPageMeta('App-Meta-Title')}</title>
         <meta name="description" content={getPageMeta('App-Meta-Description')} />
         <meta property="og:title" content={getPageMeta('App-Meta-Title')} />
         <meta property="og:description" content={getPageMeta('App-Meta-Description')} />
         <meta property="og:url" content={process.env.PUBLIC_URL || 'https://app.beefy.finance'} />
-      </Helmet>
+      </Helmet> */}
       <HashRouter>{children}</HashRouter>
     </Provider>
   );

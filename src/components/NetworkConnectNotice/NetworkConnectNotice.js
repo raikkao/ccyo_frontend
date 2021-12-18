@@ -80,11 +80,11 @@ export function NetworkConnectNotice({
           <Button onClick={targetNetworkSetup} className={classes.button}>
             {t('Network-SwitchToNetwork', { network: targetNetworkFriendlyName })}
           </Button>
-          {isSupportedNetwork ? (
+          {/* {isSupportedNetwork ? (
             <Button href={supportedNetwork.app} className={classes.button}>
               {t('Network-GoToApp', { network: supportedNetwork.name })}
             </Button>
-          ) : null}
+          ) : null} */}
           <Button onClick={disconnectWallet} className={classes.button}>
             {t('Network-DisconnectWallet')}
           </Button>
